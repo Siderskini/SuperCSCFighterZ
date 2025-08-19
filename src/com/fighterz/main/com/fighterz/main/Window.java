@@ -31,11 +31,15 @@ public class Window extends Application {
     private static GameScene previousScene;
 
     public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void init() {
         width = INIT_WIDTH;
         height = INIT_HEIGHT;
         hRatio = INIT_HEIGHT / 1080.0;
         game = new Game();
-        launch(args);
     }
 
     @Override
