@@ -11,7 +11,7 @@ public abstract class GameObject {
 
     public abstract List<HitBox> getHitBoxes();
 
-    private SimpleImage sprite = new SimpleImage("spriteFalessiIdle.png");
+    private SimpleImage sprite = new SimpleImage("SpriteFalessiIdle.png");
 
     private double x;
     private double y;

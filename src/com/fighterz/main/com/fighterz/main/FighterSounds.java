@@ -3,8 +3,7 @@ package com.fighterz.main;
 import javafx.scene.media.*;
 import javafx.util.Duration;
 
-import java.io.File;
-import java.net.URISyntaxException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Logger;
@@ -204,15 +203,12 @@ public class FighterSounds {
 
 		private static void addLinesFromFolderToArrayList(String folder, ArrayList<MediaPlayer> arr) {
 			try {
-				File[] files = new File(FighterSounds.class.getClassLoader().getResource(folder).toURI()).listFiles();
-				for (File f : files) {
-					arr.add(new MediaPlayer(new Media(f.toURI().toString())));
-				}
-			} catch (URISyntaxException e) {
-				logger.severe("Can't add lines from folder to array list -- " + e.getMessage());
-				System.exit(1);
-			}
-		}
+                arr.addAll(MediaLoad.loadMediaPlayers(FighterSounds.class, folder));
+			} catch (IOException e) {
+                logger.severe("Can't add lines from folder to array list -- " + e.getMessage());
+                System.exit(1);
+            }
+        }
 	}
 
 	// Waits random amounts of time, then plays an idle sound if nothing else is
