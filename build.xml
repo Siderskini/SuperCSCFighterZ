@@ -7,8 +7,8 @@
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../eclipse/java-oxygen/Eclipse.app/Contents/Eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
     <path id="Maven Dependencies.libraryclasspath"/>
     <path id="SuperCSCFighterz.classpath">
         <pathelement location="target/classes"/>
